@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oil Spill Detection</title>
+  <link rel="icon" type="image/x-icon" href="data:image/jpeg;base64,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">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+#chatbot-toggler {
+  position: fixed;
+  bottom: 30px;
+  right: 35px;
+  border: none;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #5350C4;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+body.show-chatbot #chatbot-toggler {
+  transform: rotate(90deg);
+}
+
+#chatbot-toggler span {
+  color: #fff;
+  position: absolute;
+}
+
+#chatbot-toggler span:last-child,
+body.show-chatbot #chatbot-toggler span:first-child {
+  opacity: 0;
+}
+
+body.show-chatbot #chatbot-toggler span:last-child {
+  opacity: 1;
+}
+
+.chatbot-popup {
+  position: fixed;
+  right: 35px;
+  bottom: 90px;
+  width: 420px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 15px;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.2);
+  transform-origin: bottom right;
+  box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+    0 32px 64px -48px rgba(0, 0, 0, 0.5);
+  transition: all 0.1s ease;
+}
+
+body.show-chatbot .chatbot-popup {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  padding: 15px 22px;
+  background: #5350C4;
+  justify-content: space-between;
+}
+
+.chat-header .header-info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.header-info .chatbot-logo {
+  width: 35px;
+  height: 35px;
+  padding: 6px;
+  fill: #5350C4;
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.header-info .logo-text {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.31rem;
+  letter-spacing: 0.02rem;
+}
+
+.chat-header #close-chatbot {
+  border: none;
+  color: #fff;
+  height: 40px;
+  width: 40px;
+  font-size: 1.9rem;
+  margin-right: -10px;
+  padding-top: 2px;
+  cursor: pointer;
+  border-radius: 50%;
+  background: none;
+  transition: 0.2s ease;
+}
+
+.chat-header #close-chatbot:hover {
+  background: #3d39ac;
+}
+
+.chat-body {
+  padding: 25px 22px;
+  gap: 20px;
+  display: flex;
+  height: 250px;
+  overflow-y: auto;
+  margin-bottom: 82px;
+  flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: #ccccf5 transparent;
+}
+
+.chat-body,
+.chat-form .message-input:hover {
+  scrollbar-color: #ccccf5 transparent;
+}
+
+.chat-body .message {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+}
+
+.chat-body .message .bot-avatar {
+  width: 35px;
+  height: 35px;
+  padding: 6px;
+  fill: #fff;
+  flex-shrink: 0;
+  margin-bottom: 2px;
+  align-self: flex-end;
+  border-radius: 50%;
+  background: #5350C4;
+}
+
+.chat-body .message .message-text {
+  padding: 12px 16px;
+  max-width: 75%;
+  color:black;
+  font-size: 0.95rem;
+}
+
+.chat-body .bot-message.thinking .message-text {
+  padding: 2px 16px;
+}
+
+.chat-body .bot-message .message-text {
+  background: #F2F2FF;
+  border-radius: 13px 13px 13px 3px;
+}
+
+.chat-body .user-message {
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.chat-body .user-message .message-text {
+  color: #fff;
+  background: #5350C4;
+  border-radius: 13px 13px 3px 13px;
+}
+
+.chat-body .user-message .attachment {
+  width: 50%;
+  margin-top: -7px;
+  border-radius: 13px 3px 13px 13px;
+}
+
+.chat-body .bot-message .thinking-indicator {
+  display: flex;
+  gap: 4px;
+  padding-block: 15px;
+}
+
+.chat-body .bot-message .thinking-indicator .dot {
+  height: 7px;
+  width: 7px;
+  opacity: 0.7;
+  border-radius: 50%;
+  background: #6F6BC2;
+  animation: dotPulse 1.8s ease-in-out infinite;
+}
+
+.chat-body .bot-message .thinking-indicator .dot:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.chat-body .bot-message .thinking-indicator .dot:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.chat-body .bot-message .thinking-indicator .dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes dotPulse {
+
+  0%,
+  44% {
+    transform: translateY(0);
+  }
+
+  28% {
+    opacity: 0.4;
+    transform: translateY(-4px);
+  }
+
+  44% {
+    opacity: 0.2;
+  }
+}
+
+.chat-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  padding: 15px 22px 20px;
+}
+
+.chat-footer .chat-form {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: #fff;
+  border-radius: 32px;
+  outline: 1px solid #CCCCE5;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.06);
+  transition: 0s ease, border-radius 0s;
+}
+
+.chat-form:focus-within {
+  outline: 2px solid #5350C4;
+}
+
+.chat-form .message-input {
+  width: 100%;
+  height: 47px;
+  outline: none;
+  resize: none;
+  border: none;
+  max-height: 180px;
+  scrollbar-width: thin;
+  border-radius: inherit;
+  font-size: 0.95rem;
+  padding: 14px 0 12px 18px;
+  scrollbar-color: transparent transparent;
+}
+
+.chat-form .chat-controls {
+  gap: 3px;
+  height: 47px;
+  display: flex;
+  padding-right: 6px;
+  align-items: center;
+  align-self: flex-end;
+}
+
+.chat-form .chat-controls button {
+  height: 35px;
+  width: 35px;
+  border: none;
+  cursor: pointer;
+  color: #706DB0;
+  border-radius: 50%;
+  font-size: 1.15rem;
+  background: none;
+  transition: 0.2s ease;
+}
+
+.chat-form .chat-controls button:hover,
+body.show-emoji-picker .chat-controls #emoji-picker {
+  color: #3d39ac;
+  background: #f1f1ff;
+}
+
+.chat-form .chat-controls #send-message {
+  color: #fff;
+  display: none;
+  background: #5350C4;
+}
+
+.chat-form .chat-controls #send-message:hover {
+  background: #3d39ac;
+}
+
+.chat-form .message-input:valid~.chat-controls #send-message {
+  display: block;
+}
+
+.chat-form .file-upload-wrapper {
+  position: relative;
+  height: 35px;
+  width: 35px;
+}
+
+.chat-form .file-upload-wrapper :where(button, img) {
+  position: absolute;
+}
+
+.chat-form .file-upload-wrapper img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.chat-form .file-upload-wrapper #file-cancel {
+  color: #ff0000;
+  background: #fff;
+}
+
+.chat-form .file-upload-wrapper :where(img, #file-cancel),
+.chat-form .file-upload-wrapper.file-uploaded #file-upload {
+  display: none;
+}
+
+.chat-form .file-upload-wrapper.file-uploaded img,
+.chat-form .file-upload-wrapper.file-uploaded:hover #file-cancel {
+  display: block;
+}
+
+em-emoji-picker {
+  position: absolute;
+  left: 50%;
+  top: -337px;
+  width: 100%;
+  max-width: 350px;
+  visibility: hidden;
+  max-height: 330px;
+  transform: translateX(-50%);
+}
+
+body.show-emoji-picker em-emoji-picker {
+  visibility: visible;
+}
+
+/* Responsive media query for mobile screens */
+@media (max-width: 520px) {
+  #chatbot-toggler {
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .chatbot-popup {
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    border-radius: 0;
+    width: 100%;
+  }
+
+  .chatbot-popup .chat-header {
+    padding: 12px 15px;
+  }
+
+  .chat-body {
+    height: calc(90% - 55px);
+    padding: 25px 15px;
+  }
+
+  .chat-footer {
+    padding: 10px 15px 15px;
+  }
+
+  .chat-form .file-upload-wrapper.file-uploaded #file-cancel {
+    opacity: 0;
+  }
+}
+    /* General Styles */
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      color: #fff;
+      background: linear-gradient(to bottom, #00172b, #003d59);
+      overflow-x: hidden;
+    }
+
+    .motion-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at top left, #003d59, #00172b, #000000);
+      animation: motion 10s infinite alternate;
+      z-index: -1;
+    }
+
+    @keyframes motion {
+      from {
+        background-position: 0% 0%;
+      }
+      to {
+        background-position: 100% 100%;
+      }
+    }
+
+    /* Horizontal Navigation */
+    .top-nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 10px 0;
+      z-index: 1000;
+    }
+
+    .top-nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: right;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .top-nav li {
+      margin: 0 15px;
+    }
+
+    .nav-link {
+      display: inline-block;
+      padding: 12px 20px;
+      font-size: 20px;
+      font-weight: 600;
+      color: white;
+      text-decoration: none;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      display: block;
+      margin-top: 7px;
+      right: 0;
+      background: #0f4550;
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+      right: 0;
+    }
+
+    .nav-link.active {
+      text-decoration: none;
+      animation: pop 0.3s ease-in-out;
+    }
+
+    @keyframes pop {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .nav-link:active {
+      transform: scale(0.9);
+      color: #1a2b38;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      text-align: center;
+      padding: 180px 20px 120px;
+    }
+
+    .hero-title {
+      font-size: 48px;
+      margin-bottom: 20px;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    .hero-description {
+      font-size: 24px;
+      line-height: 1.8;
+      margin-bottom: 40px;
+      animation: fadeIn 2s ease-in;
+    }
+
+    .hero-button {
+      font-size: 20px;
+      padding: 15px 30px;
+      background: #0e06a4;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      animation: fadeIn 2.5s ease-in;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .hero-button:hover {
+      background: #02353f;
+      transform: scale(1.1);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Кнопка */
+    a {
+      display: inline-block;
+      padding: 12px 20px;
+      font-size: 16px;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+      position: relative;
+    }
+
+    a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      display: block;
+      margin-top: 5px;
+      right: 0;
+      background: #13b2d1;
+      transition: width 0.3s ease, right 0.3s ease;
+    }
+
+    a:hover::after {
+      width: 100%;
+      right: 0;
+    }
+
+    a.active {
+      box-shadow: 0 0 10px #ffffff;
+      animation: pop 0.3s ease-in-out;
+    }
+
+    a:active {
+      transform: scale(0.9);
+    }
+    .profile-section {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .profile-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .profile-info {
+      display: block;
+      background: #fff;
+      color: #000;
+      padding: 10px;
+      border-radius: 10px;
+      height: auto;
+      width: 200px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .profile-info.visible {
+      display: flex;
+    }
+
+    .profile-info p {
+      margin: 0;
+    }
+
+    .profile-info button {
+      padding: 5px 10px;
+      background: #5350C4;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .profile-info button:hover {
+      background: #3d39ac;
+    }
+
+    .logout-button {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      padding: 10px 20px;
+      background: #ff0000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-bottom: 290px;
+    }
+
+    .logout-button:hover {
+      background: #cc0000;
+    }
+    /* Style for Change Password and Change Profile Picture buttons */
+    .change-password-form button {
+      padding: 10px 20px;
+      margin: 10px 0;
+      background: #5350C4;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .change-password-form button:hover {
+      background: #3d39ac;
+      transform: scale(1.05);
+    }
+
+    .change-password-form button:active {
+      transform: scale(0.95);
+    }
+
+    /* Style for profile avatar image */
+    .profile-avatar {
+      width: 50px;
+      height: 50px;
+      margin-top: 80px;
+      margin-left: 20px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .profile-avatar:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .profile-avatar2 {
+      width: 50px;
+      height: 50px;
+      margin-left: 20px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .profile-avatar2:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .change-password-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .change-password-form input[type="password"] {
+      padding: 10px;
+      margin-top: 10px;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+
+    .change-password-form input[type="password"]:focus {
+      border-color: #5350C4;
+    }
+
+    .change-password-form button {
+      padding: 10px 20px;
+      margin-top:auto;
+      background: #5350C4;
+      width: 200px;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .change-password-form button:hover {
+      background: #3d39ac;
+      transform: scale(1.05);
+    }
+
+    .change-password-form button:active {
+      transform: scale(0.95);
+    }
+    .history-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 50px;
+      height: 50px;
+      background: #5350C4;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+    .history-btn:hover {
+      transform: scale(1.1);
+    }
+    .close-btn {
+      position: fixed;
+      top: 5px;
+      left: 20px;
+      width: 30px;
+      height: 30px;
+      background: #FF4C4C;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+      z-index: 1001;
+    }
+    .close-btn:hover {
+      transform: scale(1.1);
+    }
+    .history-tab {
+      position: fixed;
+      top: 0;
+      left: -300px;
+      width: 300px;
+      height: 100%;
+      background: #fff;
+      box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+      transform: translateX(0);
+      transition: left 0.5s ease;
+      overflow-y: auto;
+      z-index: 1000;
+    }
+    .history-tab.open {
+      left: 0;
+    }
+    .history-header {
+      padding: 20px;
+      background: #5350C4;
+      color: #fff;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+    .history-item {
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .history-item img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .history-item input {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 8px;
+      font-size: 0.9rem;
+    }
+    .history-item input::placeholder {
+      color: #aaa;
+    }
+    </style>
+  </head>
+  <body>
+    <!-- History Button -->
+    <button class="history-btn" onclick="toggleHistoryTab()">
+      ☰
+    </button>
+    <button class="close-btn" onclick="closeHistoryTab()">
+      ✕
+    </button>
+    <img alt="Profile Avatar" class="profile-avatar" id="profile-avatar">
+    <div class="history-tab" id="historyTab">
+      <div class="history-header">Profile History</div>
+      <div class="history-content" id="historyContent">
+        <div class="profile-container">
+          <img src="data:image/jpeg;base64,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" 
+          alt="Profile Avatar" class="profile-avatar2" id="profile-avatar2">
+          <div class="profile-info" id="profile-info">
+            <p>Email: <span id="profile-email">{{ user[0] }}</span></p>
+            <p>Username: <span id="profile-username">{{ user[1] }}</span></p>
+          </div>
+          <form class="change-password-form" id="changePasswordForm">
+            <input type="password" id="newPassword" placeholder="New Password" required>
+            <button type="button" onclick="changePassword()">Change Password</button>
+            <button type="button" onclick="changeProfilePicture()">Change Profile Avatar</button>
+          </form>
+        </div>
+      
+        <!-- Logout Button -->
+        <form action="/logout" method="POST">
+          <button type="submit" class="logout-button">Logout</button>
+        </form>
+      </div>
+    </div>
+  <!-- Chatbot Toggler -->
+  <button id="chatbot-toggler">
+    <span class="material-symbols-rounded">mode_comment</span>
+    <span class="material-symbols-rounded">close</span>
+  </button>
+
+  <div class="chatbot-popup">
+    <!-- Chatbot Header -->
+    <div class="chat-header">
+      <div class="header-info">
+        <svg class="chatbot-logo" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 1024 1024">
+          <path
+            d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z"
+          />
+        </svg>
+        <h2 class="logo-text">Chatbot</h2>
+      </div>
+      <button id="close-chatbot" class="material-symbols-rounded">keyboard_arrow_down</button>
+    </div>
+
+    <!-- Chatbot Body -->
+    <div class="chat-body">
+      <div class="message bot-message">
+        <svg class="bot-avatar" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 1024 1024">
+          <path
+            d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z"
+          />
+        </svg>
+        <!-- prettier-ignore -->
+        <div class="message-text"> Hey there  <br /> How can I help you today? </div>
+      </div>
+    </div>
+    <!-- Chatbot Footer -->
+    <div class="chat-footer">
+      <form action="#" class="chat-form">
+        <textarea placeholder="Message..." class="message-input" required></textarea>
+        <div class="chat-controls">
+          <button type="button" id="emoji-picker" class="material-symbols-outlined">sentiment_satisfied</button>
+          <div class="file-upload-wrapper">
+            <input type="file" accept="image/*" id="file-input" hidden />
+            <img src="#" />
+            <button type="button" id="file-upload" class="material-symbols-rounded">attach_file</button>
+            <button type="button" id="file-cancel" class="material-symbols-rounded">close</button>
+          </div>
+          <button type="submit" id="send-message" class="material-symbols-rounded">arrow_upward</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- Motion Background -->
+  <div class="motion-bg"></div>
+
+  <!-- Navigation -->
+  <nav class="top-nav">
+    <ul>
+      <li><a href="index.html" class="nav-link" id="home-link">Home</a></li>
+      <li><a href="about.html" class="nav-link" id="about-link">About Us</a></li>
+      <li><a href="problem.html" class="nav-link" id="problem-link">Problem</a></li>
+      <li><a href="solutions.html" class="nav-link" id="solutions-link">Potential Solutions</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <h1 class="hero-title">Oil Spill Detection</h1>
+    <p class="hero-description">
+      Our site is a great tool for detecting oil spills by AI and to guess what direction it will take further. It'll help prevent environmental problems, sea animal extinction, and diminishing ecosystems.
+    </p>
+    <button class="hero-button" onclick="location.href='formpage.html'">Get Started</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+  <script>
+    const chatBody = document.querySelector(".chat-body");
+const messageInput = document.querySelector(".message-input");
+const sendMessage = document.querySelector("#send-message");
+const fileInput = document.querySelector("#file-input");
+const fileUploadWrapper = document.querySelector(".file-upload-wrapper");
+const fileCancelButton = fileUploadWrapper.querySelector("#file-cancel");
+const chatbotToggler = document.querySelector("#chatbot-toggler");
+const closeChatbot = document.querySelector("#close-chatbot");
+
+// API setup
+const API_KEY = "AIzaSyBXzthKOPQNyR-IT5kJEBx8thSpDUWOv3s";
+const API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-pro:generateContent?key=${API_KEY}`;
+
+// Initialize user message and file data
+const userData = {
+  message: null,
+  file: {
+    data: null,
+    mime_type: null,
+  },
+};
+
+// Store chat history
+const chatHistory = [];
+const initialInputHeight = messageInput.scrollHeight;
+
+// Create message element with dynamic classes and return it
+const createMessageElement = (content, ...classes) => {
+  const div = document.createElement("div");
+  div.classList.add("message", ...classes);
+  div.innerHTML = content;
+  return div;
+};
+
+// Generate bot response using API
+const generateBotResponse = async (incomingMessageDiv) => {
+  const messageElement = incomingMessageDiv.querySelector(".message-text");
+
+  // Add user message to chat history
+  chatHistory.push({
+    role: "user",
+    parts: [{ text: userData.message }, ...(userData.file.data ? [{ inline_data: userData.file }] : [])],
+  });
+
+  // API request options
+  const requestOptions = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      contents: chatHistory,
+    }),
+  };
+
+  try {
+    // Fetch bot response from API
+    const response = await fetch(API_URL, requestOptions);
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error.message);
+
+    // Extract and display bot's response text
+    const apiResponseText = data.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g, "$1").trim();
+    messageElement.innerText = apiResponseText;
+
+    // Add bot response to chat history
+    chatHistory.push({
+      role: "model",
+      parts: [{ text: apiResponseText }],
+    });
+  } catch (error) {
+    // Handle error in API response
+    console.log(error);
+    messageElement.innerText = error.message;
+    messageElement.style.color = "#ff0000";
+  } finally {
+    // Reset user's file data, removing thinking indicator and scroll chat to bottom
+    userData.file = {};
+    incomingMessageDiv.classList.remove("thinking");
+    chatBody.scrollTo({ top: chatBody.scrollHeight, behavior: "smooth" });
+  }
+};
+
+// Handle outgoing user messages
+const handleOutgoingMessage = (e) => {
+  e.preventDefault();
+  userData.message = messageInput.value.trim();
+  messageInput.value = "";
+  messageInput.dispatchEvent(new Event("input"));
+  fileUploadWrapper.classList.remove("file-uploaded");
+
+  // Create and display user message
+  const messageContent = `<div class="message-text"></div>
+                          ${userData.file.data ? `<img src="data:${userData.file.mime_type};base64,${userData.file.data}" class="attachment" />` : ""}`;
+
+  const outgoingMessageDiv = createMessageElement(messageContent, "user-message");
+  outgoingMessageDiv.querySelector(".message-text").innerText = userData.message;
+  chatBody.appendChild(outgoingMessageDiv);
+  chatBody.scrollTo({ top: chatBody.scrollHeight, behavior: "smooth" });
+
+  // Simulate bot response with thinking indicator after a delay
+  setTimeout(() => {
+    const messageContent = `<svg class="bot-avatar" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 1024 1024">
+            <path
+              d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z"/></svg>
+          <div class="message-text">
+            <div class="thinking-indicator">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>`;
+
+    const incomingMessageDiv = createMessageElement(messageContent, "bot-message", "thinking");
+    chatBody.appendChild(incomingMessageDiv);
+    chatBody.scrollTo({ top: chatBody.scrollHeight, behavior: "smooth" });
+    generateBotResponse(incomingMessageDiv);
+  }, 600);
+};
+
+// Adjust input field height dynamically
+messageInput.addEventListener("input", () => {
+  messageInput.style.height = `${initialInputHeight}px`;
+  messageInput.style.height = `${messageInput.scrollHeight}px`;
+  document.querySelector(".chat-form").style.borderRadius = messageInput.scrollHeight > initialInputHeight ? "15px" : "32px";
+});
+
+// Handle Enter key press for sending messages
+messageInput.addEventListener("keydown", (e) => {
+  const userMessage = e.target.value.trim();
+  if (e.key === "Enter" && !e.shiftKey && userMessage && window.innerWidth > 768) {
+    handleOutgoingMessage(e);
+  }
+});
+
+// Handle file input change and preview the selected file
+fileInput.addEventListener("change", () => {
+  const file = fileInput.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    fileInput.value = "";
+    fileUploadWrapper.querySelector("img").src = e.target.result;
+    fileUploadWrapper.classList.add("file-uploaded");
+    const base64String = e.target.result.split(",")[1];
+
+    // Store file data in userData
+    userData.file = {
+      data: base64String,
+      mime_type: file.type,
+    };
+  };
+
+  reader.readAsDataURL(file);
+});
+
+// Cancel file upload
+fileCancelButton.addEventListener("click", () => {
+  userData.file = {};
+  fileUploadWrapper.classList.remove("file-uploaded");
+});
+
+// Initialize emoji picker and handle emoji selection
+const picker = new EmojiMart.Picker({
+  theme: "light",
+  skinTonePosition: "none",
+  previewPosition: "none",
+  onEmojiSelect: (emoji) => {
+    const { selectionStart: start, selectionEnd: end } = messageInput;
+    messageInput.setRangeText(emoji.native, start, end, "end");
+    messageInput.focus();
+  },
+  onClickOutside: (e) => {
+    if (e.target.id === "emoji-picker") {
+      document.body.classList.toggle("show-emoji-picker");
+    } else {
+      document.body.classList.remove("show-emoji-picker");
+    }
+  },
+});
+
+document.querySelector(".chat-form").appendChild(picker);
+
+sendMessage.addEventListener("click", (e) => handleOutgoingMessage(e));
+document.querySelector("#file-upload").addEventListener("click", () => fileInput.click());
+closeChatbot.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
+chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
+document.getElementById('profile-avatar').addEventListener('click', () => {
+      document.getElementById('profile-info').classList.toggle('visible');
+    });
+
+    default_avatar = 'data:image/jpeg;base64,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'
+    document.getElementById('profile-avatar').src = default_avatar;
+    document.getElementById('profile-avatar2').src = default_avatar;
+    function changeProfilePicture() {
+      // Function to change profile picture
+      const newPicture = prompt("Enter the URL of the new profile picture:");
+      if (newPicture) {
+        document.getElementById('profile-avatar').src = newPicture;
+        document.getElementById('profile-avatar2').src = newPicture;
+        localStorage.setItem('profilePicture', newPicture);
+      }
+    }
+    const savedAvatar = localStorage.getItem('profilePicture');
+    if(savedAvatar) {
+      document.getElementById('profile-avatar').src = savedAvatar;
+      document.getElementById('profile-avatar2').src = savedAvatar;
+    }
+
+    async function changePassword() {
+      const newPassword = document.getElementById('newPassword').value;
+      const formData = new FormData();
+      formData.append('new_password', newPassword);
+
+      const response = await fetch('/change_password', {
+        method: 'POST',
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert('Password changed successfully');
+      } else {
+        alert('Failed to change password: ' + result.message);
+      }
+    }
+
+    const historyTab = document.getElementById('historyTab');
+    const historyContent = document.getElementById('historyContent');
+
+    function toggleHistoryTab() {
+      historyTab.classList.toggle('open');
+    }
+
+    function closeHistoryTab() {
+      historyTab.classList.remove('open');
+    }
+
+    function addHistoryItem(title, description) {
+      const item = document.createElement('div');
+      item.classList.add('history-item');
+
+      const titleInput = document.createElement('input');
+      titleInput.type = 'text';
+      titleInput.placeholder = 'Title';
+      titleInput.value = title;
+      titleInput.readOnly = true;
+
+      const descriptionInput = document.createElement('input');
+      descriptionInput.type = 'text';
+      descriptionInput.placeholder = 'Description';
+      descriptionInput.value = description;
+      descriptionInput.readOnly = true;
+
+      const deleteBtn = document.createElement('button');
+      deleteBtn.textContent = 'Delete';
+      deleteBtn.classList.add('delete-btn');
+      deleteBtn.onclick = () => item.remove();
+
+      item.appendChild(titleInput);
+      item.appendChild(descriptionInput);
+      item.appendChild(deleteBtn);
+
+      historyContent.appendChild(item);
+    }
+  </script>
+</body>
+</html>

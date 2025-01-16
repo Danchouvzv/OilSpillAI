@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authentication</title>
+    <link rel="icon" type="image/x-icon" href="data:image/jpeg;base64,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">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: url('background.jpg') no-repeat center center/cover;
+      overflow: hidden;
+      background: linear-gradient(135deg, #1a1a1a, #2a2a2a 30%, #0088cc 70%, #0d0d0d);
+      background-size: 200% 200%;
+      animation: backgroundAnimation 10s ease-in-out infinite;
+    }
+    @keyframes backgroundAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    .blur-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(10px);
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .auth-container {
+      position: relative;
+      width: 400px;
+      perspective: 1000px;
+    }
+
+    .auth-box {
+      position: relative;
+      width: 100%;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      padding: 30px;
+      text-align: center;
+      transform-style: preserve-3d;
+      transition: transform 1s ease-in-out;
+    }
+
+    .auth-box .form-group {
+      margin-bottom: 20px;
+    }
+
+    .auth-box input {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .auth-box button {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      color: white;
+      background: #5350C4;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .auth-box button:hover {
+      background: #3d39ac;
+    }
+
+    .auth-box .toggle {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      color: #333;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .auth-box .toggle:hover {
+      color: #5350C4;
+    }
+
+    .show-password {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .error-message {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="blur-overlay"></div>
+  <div class="auth-container">
+    <div class="auth-box" id="authBox">
+      <!-- Sign-up Form -->
+      <div id="signUpForm">
+        <h2>Sign Up</h2>
+        <form id="signUpFormElement">
+          <div class="form-group">
+            <input type="text" placeholder="Email" id="signUpUsername" name="name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Username" id="signUpEmail" name="email" required>
+          </div>
+          <div class="form-group show-password">
+            <input type="password" placeholder="Password" id="signUpPassword" name="password" required>
+            <button type="button" onclick="togglePassword('signUpPassword')">👁️</button>
+          </div>
+          <div class="form-group show-password">
+            <input type="password" placeholder="Confirm Password" id="signUpConfirmPassword" required>
+            <button type="button" onclick="togglePassword('signUpConfirmPassword')">👁️</button>
+          </div>
+          <button type="button" onclick="registerUser()">Sign Up</button>
+        </form>
+        <div class="error-message" id="signUpError"></div>
+        <div class="toggle" onclick="switchToLogin()">Already have an account? Log In</div>
+      </div>
+      <!-- Login Form -->
+      <div id="loginForm" style="display: none;">
+        <h2>Log In</h2>
+        <form id="loginFormElement">
+          <div class="form-group">
+            <input type="email" placeholder="Username" id="loginEmail" name="email" required>
+          </div>
+          <div class="form-group show-password">
+            <input type="password" placeholder="Password" id="loginPassword" name="password" required>
+            <button type="button" onclick="togglePassword('loginPassword')">👁️</button>
+          </div>
+          <button type="button" onclick="logInUser()">Log In</button>
+        </form>
+        <div class="error-message" id="loginError"></div>
+        <div class="toggle" onclick="switchToSignUp()">Don't have an account yet? Sign Up</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const authBox = document.getElementById('authBox');
+
+    function togglePassword(fieldId) {
+      const field = document.getElementById(fieldId);
+      field.type = field.type === 'password' ? 'text' : 'password';
+    }
+
+    function switchToLogin() {
+      authBox.style.transform = 'rotateY(360deg)';
+      setTimeout(() => {
+        document.getElementById('signUpForm').style.display = 'none';
+        document.getElementById('loginForm').style.display = 'block';
+      }, 500);
+    }
+
+    function switchToSignUp() {
+      authBox.style.transform = 'rotateY(-360deg)';
+      setTimeout(() => {
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('signUpForm').style.display = 'block';
+      }, 500);
+    }
+
+    async function registerUser() {
+      const password = document.getElementById('signUpPassword').value;
+      const confirmPassword = document.getElementById('signUpConfirmPassword').value;
+
+      if (password !== confirmPassword) {
+        document.getElementById('signUpError').innerText = 'Passwords do not match.';
+        return;
+      }
+
+      const formData = new FormData(document.getElementById('signUpFormElement'));
+
+      const response = await fetch('/register', {
+        method: 'POST',
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        window.location.href = '/index';
+      } else {
+        document.getElementById('signUpError').innerText = result.message;
+      }
+    }
+
+    async function logInUser() {
+      const formData = new FormData(document.getElementById('loginFormElement'));
+
+      const response = await fetch('/auth', {
+        method: 'POST',
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        window.location.href = '/index';
+      } else {
+        document.getElementById('loginError').innerText = result.message;
+      }
+    }
+  </script>
+</body>
+</html>
